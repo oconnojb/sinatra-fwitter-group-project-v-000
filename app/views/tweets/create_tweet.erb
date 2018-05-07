@@ -1,0 +1,7 @@
+<h1>Share your thoughts with the world!</h1>
+<%= "Oops! Your Fweet can't be empty!" if !!params[:content_empty] %>
+<form action="/tweets" method="post">
+  <textarea name="content" rows="4" cols="40"></textarea>
+  <br>
+  <input type="submit" name="submit" value="Fweet!" id="submit">
+</form>

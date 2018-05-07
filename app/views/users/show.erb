@@ -1,0 +1,15 @@
+<h1>Hello, <%= @user.username %></h1>
+<%= "That's not your Fweet! You can only edit your own Fweets" if !!params[:cant_edit] %>
+<h2>Here are all your Fweets!</h2>
+
+<% if @user.tweets.size > 0 %>
+  <% counter = @user.tweets.size %>
+
+  <% while counter > 0 %>
+    <% t = @user.tweets[counter-1] %>
+    <p><%= t.user.username %>: "<%= t.content %>"</p>
+    <% counter -= 1 %>
+  <% end %>
+  <% else %>
+    <h1>Surprisingly, you have no Fweets to show!</h1>
+<% end %>

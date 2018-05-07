@@ -1,0 +1,15 @@
+<h1>Fwitter Home</h1>
+<h2>Welcome, <%= current_user.username %></h2>
+<% if Tweet.all.size > 0 %>
+  <% counter = Tweet.last.id %>
+
+  <% while counter > 0 %>
+    <% t = Tweet.find_by(id: counter) %>
+    <% unless t == nil %>
+      <p><a href="/users/<%= t.user.slug %>"><%= t.user.username %></a>: <a href="/tweets/<%= t.id %>">"<%= t.content %>"</a></p>
+    <% end %>
+    <% counter -= 1 %>
+  <% end %>
+<% else %>
+  <h1>Surprisingly, there are no Fweets to show!</h1>
+<% end %>

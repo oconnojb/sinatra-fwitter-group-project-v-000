@@ -1,0 +1,7 @@
+<h1>Log In Below:</h1>
+<%= "Something went wrong, try again" if !!params[:failed] %>
+<form action="/login" method="post">
+  <p>username: <input type="text" name="username" id="username"></p>
+  <p>password: <input type="text" name="password" id="password"></p>
+  <input type="submit" name="submit" id="submit">
+</form>
