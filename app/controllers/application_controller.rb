@@ -94,7 +94,7 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  get '/tweets/:id/delete' do
+  post '/tweets/:id/delete' do
     if logged_in?
       @tweet = Tweet.find(params[:id])
       if @tweet.user == current_user
